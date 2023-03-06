@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  background-color: rgb(219, 219, 219);
+}
+
+header{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0.5em;
+  background-color: white;
+  height: 60px;
+  position: fixed;
+  top: 0;
+  width: 100%;  
+}
+
+h1 {
+  color: grey;
+  margin-top: 6px;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 80%;
+  margin: 6em 10%;
+}
+
+.item {
+  width: 30em;
+  background-color: white;
+  box-sizing: border-box;
+  padding: 1.5em;
+  margin-bottom: 1em;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+}
+
+.item img {
+  width: 100%;
+}
+
+.item h2 {
+  font-size: 1em;
+  margin-bottom: .2em;
+}
+
+/* Botão */
+
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.label {
+  background-color: #111;
+  border-radius: 50px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 5px;
+  position: relative;
+  height: 17px;
+  width: 40px;
+  transform: scale(1.5);
+
+  margin-top: 15px;
+  margin-right: 20px;
+}
+
+
+.label .ball {
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  height: 22px;
+  width: 22px;
+  transform: translateX(0px);
+  transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .label .ball {
+  transform: translateX(24px);
+}
+
+.fa-moon {
+  color: #f1c40f;
+}
+
+.fa-sun {
+  color: #f39c12;
+}
+
+
+/* ------------------------------ Estilos para o tema escuro (Dark-Mode) ----------------------------------------------- */
+
+/* Os seguintes estilos são os que usaremos para aplicar o modo escuro, 
+você terá que modificar os seletores a fim de poder resolver o exercício.  */
+
+/* // A cor de fundo  */
+.dark{
+  background-color: rgb(39, 39, 39);
+}
+
+/* // Modificações no titulo 'A família dos felinos' */
+.dark h1{ 
+  color: rgb(170, 170, 170);
+  /* border-color: black; */
+}
+
+.dark header {
+  background-color: rgb(19, 19, 19);
+}
+
+/* // Modificações nos items */
+.dark .item{
+  background-color: rgb(19, 19, 19);
+  border-color: black;
+}
+
+/* // Modificações nos textos dos itens e cabeçalhos dos itens */
+.dark .container{
+  color: rgb(230, 230, 230);
+}
