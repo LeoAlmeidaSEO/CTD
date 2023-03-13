@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./styles.css" />
+  <title>Checkpoint_I</title>
+</head>
+
+<header>
+  <div class="page">
+    <img class="logo" src="./img/messages.png" alt="">
+    <h1> LEARN CODE </h1>
+  </div>
+  <div>
+    <h2 class="inicio">
+      Plataforma de cursos compartilhados
+    </h2>
+  </div>
+</header>
+
+<form class="form-group">
+
+  <div class="video">
+    <video autoplay="true" loop>
+      <source src="./video.mp4" type="video/mp4" />
+    </video>
+  </div>
+  <h1>Exemplo</h1>
+
+  <div class="form-group-input">
+    <i class="fa fa-info icon icon1"></i>
+    <input type="text" placeholder="Título" name="title" id="userTitle" />
+
+    <div class="form-group-input">
+      <input type="text" placeholder="URL Imagem" name="name" id="userUrlImage" />
+      <i class="fa fa-picture-o icon icon2"></i>
+    </div>
+
+  </div>
+
+  <textarea name="descricao" placeholder="Descrição" id="userDescription" type="text" cols="30" rows="10"></textarea>
+
+  <button type="submit" id="registerButton">Cadastrar</button>
+
+</form>
+
+
+<div id="root">
+  <h2 id="titulo">Novos Cursos</h2>
+  <div id="cards-cursos">
+    <div id="img">
+      <img class="img" src="https://t3.ftcdn.net/jpg/05/31/71/02/360_F_531710260_ByieqNe7Ut6QBHgIR7xgdsxH7gICrHr1.jpg
+        " alt="Imagem do card" />
+    </div>
+    <h3 id="titulo-curso">Web Design: HTML5, CSS3 e JS</h3>
+    <p>
+      Neste curso você irá aprender e desenvolver suas habilidades com HTML
+      e CSS, além de ter uma boa base da linguagem de programação
+      Javascript. Verá conceitos avançados de HTML, incluindo semântica e
+      uma introdução ao SEO (otimização para sites de busca) e
+      acessibilidade. Já com relação ao CSS você verá em detalhes todas as
+      propriedades necessárias para criar layouts de páginas e sites na web.
+      Iremos também desenvolver um projeto responsivo, ou seja, que funciona
+      bem em todos os dispositivos, mobiles, tablets e desktop. Dará os
+      primeiros passos com Javascript e descobrirá o poder dessa linguagem,
+      que atualmente é a mais utilizada entre os desenvolvedores web.
+    </p>
+  </div>
+
+  <div id="cards-cursos">
+    <img src="https://img.freepik.com/vetores-gratis/fundo-gradiente-ui-ux_23-2149052117.jpg?w=2000
+        " alt="Imagem do card" />
+    <h3 id="titulo-curso">UX & UI Design</h3>
+    <p>
+      Neste curso você irá aprender a criar designs de qualidade através de
+      aulas dinâmicas com conceitos e ferramentas nos principais softwares
+      do mercado. Crie layouts para impressos ou plataformas digitais. Edite
+      vídeos ou crie animações. Aventure-se no universo da modelagem virtual
+      3D ou torne-se um ilustrador. Aprenda a capturar e tratar imagens com
+      qualidade profissional.
+    </p>
+  </div>
+  <div id="cards-cursos">
+    <div id="img">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS51IMKOrXbSeFZvcSb489cSEsWlGeTe3d5IA&usqp=CAU
+        " alt="Imagem do card" />
+    </div>
+    <h3 id="titulo-curso">Fundamentos de Java</h3>
+    <p>
+      Este curso fornece embasamento necessário para que o aluno possa avançar seus conhecimentos em lógica de
+      programação, resolução de algoritmos complexos em JAVA bem como se preparar para adentrar a uma área mais
+      complexa dessa linguagem, que é a Orientação a Objetos, conteúdo de outro curso desta plataforma.
+      Essa linguagem permite desenhar softwares que podem ser executados e distribuídos em diferentes plataformas
+      (MAC, Linux, Windows etc.), sem a necessidade de modificá-los e, inclusive, sem pensar na arquitetura da
+      máquina.
+    </p>
+  </div>
+
+  <div id="cards-cursos">
+    <img src="data:image/png;base64,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
+        " alt="Imagem do card" />
+    <h3 id="titulo-curso">Python Básico</h3>
+    <p>
+      O objetivo deste curso é articular teoria e prática do raciocínio lógico por meio da Linguagem de Programação
+      Python, desenvolvendo programas básicos em modo console, apresentando, de forma simples, a plataforma de
+      desenvolvimento PyCharm. A linguagem de programação Python vem crescendo muito nos últimos anos devido à sua
+      simplicidade e, principalmente, à sua grande compatibilidade, pois funciona bem na maioria dos sistemas
+      operacionais.O curso começa de uma forma bem didática, explicando o que é o raciocínio lógico e mostrando que a
+      lógica está presente em nosso cotidiano em diversas situações. Em seguida, passamos para a etapa de download da
+      ferramenta, instalação e configurações iniciais, para, então, abordar o conteúdo mais técnico.
+    </p>
+  </div>
+  <div id="cards-cursos">
+    <div id="img">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTN_GaHgmEi6bSTYPUtI82GfRIqLjxR1PY47Q&usqp=CAU
+        " alt="Imagem do card" />
+    </div>
+    <h3 id="titulo-curso">React na prática</h3>
+    <p>Neste curso irá descobrir o jeito mais moderno de desenvolver aplicações web e sistemas web, você vai aprender
+      a criar aplicações completas do extremo zero e entendendo na prática como o React Js funciona.
+      O Curso é para qualquer pessoa, desenvolvedores que querem crescer como programadores na área de desenvolvimento
+      web. Então mesmo que você ainda não saiba nada sobre programação e quer começar na area esse curso aqui também é
+      pra
+      você. Vamos aprender na pratica tudo desde o zero á configurar seu ambiente de trabalho e todo ecossistema,
+      entender oque é o react e por que usamos ele, criar seus primeiros projetos e até aplicações completas.
+      Temos como objetivo sempre passar boas praticas e métodos que são os mais usados e preparando você seja para
+      o mercado de trabalho, ou apenas para criar seus próprios projetos.
+    </p>
+  </div>
+
+  <div id="cards-cursos">
+    <img src="data:image/png;base64,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
+        " alt="Imagem do card" />
+    <h3 id="titulo-curso">Lógica de Programação</h3>
+    <p>
+      A função principal de um computador é a execução confiável e rápida de tarefas, facilitando o trabalho do
+      usuário.Fisicamente, no entanto, ele não é mais do que um conjunto de componentes elétricos e mecânicos capaz de
+      processar instruções lógicas corretamente encadeadas.Este curso aborda o conceito de lógica, lógica de
+      programação e o pensamento dedutivo e matemático que embasa a construção de instruções lógicas corretas.Para
+      isso, são apresentados os fundamentos básicos da lógica da programação e as principais técnicas para o
+      desenvolvimento de algoritmos: descrição narrativa, fluxograma e pseudocódigo.
+    </p>
+  </div>
+</div>
+
+
+<script src="./main.js"></script>
+
+</body>
+
+</html>
