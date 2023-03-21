@@ -32,28 +32,40 @@
   <h1>Exemplo</h1>
 
   <div class="form-group-input">
-    <i class="fa fa-info icon icon1"></i>
-    <input type="text" placeholder="Título" name="title" id="userTitle" />
 
-    <div class="form-group-input">
-      <input type="text" placeholder="URL Imagem" name="name" id="userUrlImage" />
+    <div class="container">
+      <i class="fa fa-info icon icon1"></i>
+      <input type="text" placeholder="Título" name="title" class="userTitle" id="title" required />
+      <div class="span-separator">
+        <span class="error-message-titulo"></span>
+      </div>
+      <input type="text" placeholder="URL Imagem" name="name" class="userUrlImage" id="url" required />
+      <span class="error-message"></span>
       <i class="fa fa-picture-o icon icon2"></i>
     </div>
-
   </div>
 
-  <textarea name="descricao" placeholder="Descrição" id="userDescription" type="text" cols="30" rows="10"></textarea>
-
-  <button type="submit" id="registerButton">Cadastrar</button>
+  <div class="container-text">
+     <textarea name="descricao" placeholder="Descrição" class="userDescription" id="description"  type="text" cols="30"
+    rows="10" required></textarea>
+    <div class="span-separator">
+      <span class="error-message-textarea"></span>
+    </div>
+  </div>
+ 
+  <button type="submit" id="register-button" disabled class="btn" >Cadastrar</button>
 
 </form>
 
 
+
+
+
 <div id="root">
-  <h2 id="titulo">Novos Cursos</h2>
+   <h2 id="titulo">Novos Cursos</h2>
   <div id="cards-cursos">
     <div id="img">
-      <img class="img" src="https://t3.ftcdn.net/jpg/05/31/71/02/360_F_531710260_ByieqNe7Ut6QBHgIR7xgdsxH7gICrHr1.jpg
+      <img src="https://t3.ftcdn.net/jpg/05/31/71/02/360_F_531710260_ByieqNe7Ut6QBHgIR7xgdsxH7gICrHr1.jpg
         " alt="Imagem do card" />
     </div>
     <h3 id="titulo-curso">Web Design: HTML5, CSS3 e JS</h3>
@@ -71,7 +83,7 @@
     </p>
   </div>
 
-  <div id="cards-cursos">
+  <!-- <div id="cards-cursos">
     <img src="https://img.freepik.com/vetores-gratis/fundo-gradiente-ui-ux_23-2149052117.jpg?w=2000
         " alt="Imagem do card" />
     <h3 id="titulo-curso">UX & UI Design</h3>
@@ -144,12 +156,10 @@
       isso, são apresentados os fundamentos básicos da lógica da programação e as principais técnicas para o
       desenvolvimento de algoritmos: descrição narrativa, fluxograma e pseudocódigo.
     </p>
-  </div>
+  </div>  -->
 </div>
 
-
-<script src="./main.js"></script>
-
+<script src="./index.js"></script>
 </body>
 
 </html>
