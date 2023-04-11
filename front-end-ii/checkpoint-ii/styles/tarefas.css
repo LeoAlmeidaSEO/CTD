@@ -36,7 +36,7 @@ a {
   margin-left: .7em;
 }
 
-#closeApp{
+#finalizarSessao{
   margin-left: 15px;
   font-size: .7em;
   background-color: rgb(218, 88, 88);
@@ -44,6 +44,11 @@ a {
   border-radius: 50vh;
   padding: 5px 10px;
   cursor: pointer;
+}
+
+form.nova-tarefa.error input {
+  border-bottom: solid 1px rgb(218, 88, 88);
+  color: rgb(218, 88, 88);
 }
 
 /* Nova tarefa ----------------------------------------------------------- */
@@ -223,6 +228,8 @@ a {
   color: grey;
   text-decoration: line-through;
 }
+
+
 
 #skeleton .descricao{
   background-color: rgb(189, 189, 189);

@@ -1,4 +1,6 @@
 window.addEventListener('load', () => console.log('carregou index'));
+const baseAPI = 'https://todo-api.ctd.academy/v1';
+
 
 // Gravar conteúdo do formulario
 const inputEmailRef = document.querySelector('#inputEmail');
@@ -16,8 +18,8 @@ function checkFormValidity() {
     const formErrorsArray = Object.values(formErrors)
     const formValidity = formErrorsArray.every(item => item === false)
 
-    console.log(formErrors)
-    console.log(formValidity)
+    // console.log(formErrors)
+    // console.log(formValidity)
 
     loginButtonRef.disabled = !formValidity
 }
@@ -41,7 +43,7 @@ function validarInput(inputRef) {
 
     formErrors[inputRef.id] = !inputValidado
     
-    console.log(formErrors);
+    // console.log(formErrors);
     checkFormValidity()
 
 }
@@ -60,12 +62,13 @@ function login(event) {
 
     event.preventDefault()
 
-    var userData = {
+    var userLoginData = {
         email: inputEmailRef.value,
         password: inputPasswordRef.value
     }
 
-    console.log(userData);
+    chamarAPILogin(userLoginData)
+    console.log(userLoginData);
     resetForm();
     
       
@@ -78,5 +81,35 @@ inputPasswordRef.addEventListener('keyup', () => validarInput(inputPasswordRef))
 inputPasswordRef.addEventListener('blur', () => validarInput(inputPasswordRef))
 loginButtonRef.addEventListener('click', (event) => login(event));
 
-//API
+function chamarAPILogin(userLoginData) {
 
+    const requestHeaders = {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+    }
+
+    var requestConfig = {
+        method: 'POST',
+        headers: requestHeaders,
+        body: JSON.stringify(userLoginData)
+    }
+
+    fetch(`${baseAPI}/users/login`, requestConfig)
+        .then(response => {
+            if(response.ok) {
+                response.json().then(
+                    token => {
+                        localStorage.setItem('tokenValidado', token.jwt)
+                        window.location.href = "./tarefas.html"
+                        alert('Acesso liberado')
+                    }
+                )
+            } else {
+
+                alert('O seu usuário ou senha está incorreta')
+
+            }
+        }
+    )
+
+}
